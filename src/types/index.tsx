@@ -8,6 +8,10 @@ export interface ApiResponse<T> {
   results: Array<T>
 }
 
+export interface ApiErrorResponse {
+  error: string;
+}
+
 export interface Character {
   id: number;
   name: string;

@@ -9,9 +9,11 @@ const Default: React.FC<Props> = ({ children, isLoading }) => {
   }
 
   return (
-    <>
-      {children}
-    </>
+    <div className="bg-slate-100">
+      <div className="container mx-auto px-4">
+        {children}
+      </div>
+    </div>
   )
 }
 

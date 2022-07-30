@@ -15,9 +15,9 @@ export interface ApiErrorResponse {
 export interface Character {
   id: number;
   name: string;
-  status: string;
+  status: CharacterStatusEnum;
   type: string;
-  gender: string;
+  gender: CharacterGenderEnum;
   origin: {
     name: string;
     url: string;
@@ -30,6 +30,18 @@ export interface Character {
   episode: Array<string>
   url: string
   created: string
+}
+
+export enum CharacterStatusEnum {
+  ALIVE = "Alive",
+  DEAD = "Dead",
+  UNKNOWN = "Unknown"
+}
+
+export enum CharacterGenderEnum {
+  MALE = "Male",
+  FEMALE = "Female",
+  UNKNOWN = "Unknown"
 }
 
 export interface Location {

@@ -1,4 +1,3 @@
-import HomePage from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import CharactersPage from "./pages/characters";
 import CharacterShowPage from "./pages/characters/show";
@@ -10,7 +9,7 @@ import EpisodeShowPage from "./pages/episodes/show";
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<CharactersPage />} />
       <Route path="/characters">
         <Route index element={<CharactersPage />} />
         <Route path=":characterId" element={<CharacterShowPage />} />

@@ -1,3 +1,5 @@
+import Loading from '../Loading';
+
 interface Props {
   children: React.ReactNode;
   isLoading?: boolean;
@@ -5,7 +7,7 @@ interface Props {
 
 const Default: React.FC<Props> = ({ children, isLoading }) => {
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (

@@ -9,11 +9,14 @@ import Location from "./../../components/Location";
 const Index: React.FC = () => {
   const [locations, setLocations] = useState<Array<LocationType>>([]);
   const [isLoading, setLoading] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(0);
 
   useEffect(() => {
-    getLocations()
+    getLocations(currentPage)
       .then((res: AxiosResponse<ApiResponse<LocationType>>) => {
-        setLocations(res.data.results);
+        setLocations([...locations, ...res.data.results]);
+        setTotalPages(res.data.info.pages);
       })
       .catch((res: AxiosError<ApiErrorResponse>) => {
         alert(res.response?.data.error);
@@ -21,11 +24,11 @@ const Index: React.FC = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [currentPage]);
 
   return (
     <Layout isLoading={isLoading}>
-      <List>
+      <List currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages}>
         {
           locations.map((location: LocationType, index: number) => {
             return <Location key={index} location={location} />

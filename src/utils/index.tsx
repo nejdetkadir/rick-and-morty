@@ -1,4 +1,5 @@
 import { CharacterStatusEnum, CharacterGenderEnum } from "./../types";
+import moment from 'moment';
 
 export const statusColor = (status: CharacterStatusEnum) => {
   if (status === CharacterStatusEnum.ALIVE) {
@@ -18,4 +19,8 @@ export const genderColor = (gender: CharacterGenderEnum) => {
   } else {
     return "bg-slate-500"
   }
+}
+
+export const timeAgoInWords = (datetime: string) => {
+  return moment(datetime).fromNow();
 }

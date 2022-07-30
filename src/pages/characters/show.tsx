@@ -5,7 +5,7 @@ import { getCharacter } from "./../../api";
 import { AxiosResponse, AxiosError } from "axios";
 import Layout from "./../../components/Layout/default";
 import { Link } from "react-router-dom";
-import Properties from "../../components/Character/Property/list";
+import Properties from "../../components/Property/list";
 
 const Show: React.FC = () => {
   const [character, setCharacter] = useState<CharacterType>();
@@ -42,7 +42,6 @@ const Show: React.FC = () => {
             <p><b>Location:</b> {character?.location?.name}</p>
           </div>
         }
-
         {
           character?.origin?.name &&
           <div className="flex justify-center">

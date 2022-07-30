@@ -1,6 +1,6 @@
-import { statusColor, genderColor } from "./../../../utils"
+import { statusColor, genderColor } from "../../utils"
 import Property from "./index";
-import {Character as CharacterType } from "./../../../types";
+import {Character as CharacterType } from "../../types";
 
 interface Props {
   character: CharacterType;

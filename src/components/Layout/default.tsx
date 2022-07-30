@@ -1,4 +1,5 @@
 import Loading from '../Loading';
+import Header from '../Header';
 
 interface Props {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ const Default: React.FC<Props> = ({ children, isLoading }) => {
 
   return (
     <div className="container mx-auto px-4">
+      <Header />
       {children}
     </div>
   )

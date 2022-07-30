@@ -40,12 +40,9 @@ const Show: React.FC = () => {
             <p><b>Air Date:</b> {timeAgoInWords(episode?.air_date)} ({episode?.air_date})</p>
           </div>
         }
-        {
-          episode?.episode &&
-          <div className="flex justify-center">
-            <p><b>Episode:</b> {episode?.episode}</p>
-          </div>
-        }
+        <div className="flex justify-center">
+          <p><b>Episode:</b> {episode?.episode}</p>
+        </div>
         <div className="flex justify-center mt-4 gap-5">
           <Property color="bg-indigo-500" text={`${episode?.characters.length} Characters`} customClass="px-5 py-2 shadow-lg" />
         </div>

@@ -3,6 +3,8 @@ import { Episode as EpisodeType, ApiResponse, ApiErrorResponse } from "./../../t
 import { getEpisodes } from "./../../api";
 import { AxiosResponse, AxiosError } from "axios";
 import Layout from "./../../components/Layout/default";
+import Episode from "./../../components/Episode";
+import List from "./../../components/List";
 
 const Index: React.FC = () => {
   const [episodes, setEpisodes] = useState<Array<EpisodeType>>([]);
@@ -23,11 +25,13 @@ const Index: React.FC = () => {
 
   return (
     <Layout isLoading={isLoading}>
-      <h1 className="text-3xl font-bold underline">
-        <pre>
-          {JSON.stringify(episodes, null, 2)}
-        </pre>
-      </h1>
+      <List>
+        {
+          episodes.map((episode: EpisodeType, index: number) => {
+            return <Episode key={index} episode={episode} />
+          })
+        }
+      </List>
     </Layout>
   );
 }

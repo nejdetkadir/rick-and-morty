@@ -4,7 +4,7 @@ import { getCharacters } from "./../../api";
 import { AxiosResponse, AxiosError } from "axios";
 import Layout from "./../../components/Layout/default";
 import Character from "./../../components/Character";
-import List from ".//../../components/List";
+import List from "./../../components/List";
 
 const Index: React.FC = () => {
   const [characters, setCharacters] = useState<Array<CharacterType>>([]);

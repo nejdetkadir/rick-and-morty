@@ -3,6 +3,8 @@ import { Location as LocationType, ApiResponse, ApiErrorResponse } from "./../..
 import { getLocations } from "./../../api";
 import { AxiosResponse, AxiosError } from "axios";
 import Layout from "./../../components/Layout/default";
+import List from "./../../components/List";
+import Location from "./../../components/Location";
 
 const Index: React.FC = () => {
   const [locations, setLocations] = useState<Array<LocationType>>([]);
@@ -23,11 +25,13 @@ const Index: React.FC = () => {
 
   return (
     <Layout isLoading={isLoading}>
-      <h1 className="text-3xl font-bold underline">
-        <pre>
-          {JSON.stringify(locations, null, 2)}
-        </pre>
-      </h1>
+      <List>
+        {
+          locations.map((location: LocationType, index: number) => {
+            return <Location key={index} location={location} />
+          })
+        }
+      </List>
     </Layout>
   );
 }

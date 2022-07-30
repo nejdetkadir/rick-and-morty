@@ -5,7 +5,7 @@ interface Props {
   episode: EpisodeType;
 }
 
-const Default: React.FC<Props> = ({ episode }) => {
+const Index: React.FC<Props> = ({ episode }) => {
   return (
     <div className="w-full shadow-xl rounded-md bg-slate-100 hover:shadow-2xl h-full">
       <div className="px-4 py-2 text-center flex flex-col gap-2 m-3">
@@ -18,4 +18,4 @@ const Default: React.FC<Props> = ({ episode }) => {
   )
 }
 
-export default Default;
+export default Index;

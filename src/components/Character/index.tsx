@@ -5,7 +5,7 @@ interface Props {
   character: CharacterType;
 }
 
-const Default: React.FC<Props> = ({ character }) => {
+const Index: React.FC<Props> = ({ character }) => {
   return (
     <div className="w-full shadow-xl rounded-md bg-slate-100 hover:shadow-2xl">
       <img className="w-full" src={character.image} alt={character.name} />
@@ -19,4 +19,4 @@ const Default: React.FC<Props> = ({ character }) => {
   )
 }
 
-export default Default;
+export default Index;
